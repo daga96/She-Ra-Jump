@@ -1,0 +1,81 @@
+
+body{
+    font-family: 'Press Start 2P', cursive;
+}
+.character {
+    position:absolute;
+    width: 64px;
+    height: 64px;
+    overflow:hidden;
+    bottom: 0px;
+    left: 10px;
+}
+
+.character_spritesheet {
+    position: absolute;
+    animation: moveCharacter 1s steps(2) infinite;
+    height: 128px;
+}
+
+
+@keyframes moveCharacter {
+    from {
+        transform: translate3d(0px,0px,0)
+     }
+     to {
+        transform: translate3d(0px,-100%,0)
+     }
+}
+
+.obstacle {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background-color: blueviolet;
+    bottom: 0px;
+}
+
+@keyframes slideright {
+    from {
+        background-position: 70000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+  
+  @-webkit-keyframes slideright {
+    from {
+        background-position: 70000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+  
+  #runner-background {
+    position: absolute;
+    top:50px;
+    left:30%;
+    width: 600px;
+    height: 200px;
+    overflow: hidden;
+    background-repeat: repeat-x;
+    animation: slideright 900s infinite linear;
+    -webkit-animation: slideright 900s infinite linear;
+}
+
+  
+  #alert{
+    margin: auto;
+    text-align: center;
+    font-size: 22px; 
+    font: #000000;
+    font-weight: 700;
+  }
+
+  #score {
+      position: absolute;
+      right:50px;
+      font-size:12px;
+  }
