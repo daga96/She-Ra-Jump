@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const alert = document.getElementById('alert')
     const score = document.getElementById('score')
     const cloud = document.querySelector('.cloud')
+    const refres = document.getElementById('refresh')
     const animationEnd = document.getElementById('gameOver')
 
     let isJumping = false
@@ -16,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // hide gameOver info
     alert.style.display = "none";
+    refresh.style.display = "none";
+        
     animationEnd.style.display = "none";
 
 
@@ -102,11 +105,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 alert.innerHTML = 'Game Over'
                 alert.style.display = "block";
+                refresh.style.display = "block";
                 animationEnd.style.display = "block";
 
                 clearInterval(scoreInterval);
                 clearInterval(timerId);
 
+                document.addEventListener('keyup', function (e) {
+                
+                    window.location.reload();
+                });
                 //remove children
 
                 while (grid.firstChild) 

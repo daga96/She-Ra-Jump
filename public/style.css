@@ -97,6 +97,23 @@ body{
     font-weight: 700;
   }
 
+  #refresh {
+      margin:auto;
+      margin-top: 70px;
+      animation:  blink 1s steps(5, start) infinite;
+      -webkit-animation:  blink 1s steps(5, start) infinite;
+  }
+  @keyframes blink{
+    to {
+        visibility: hidden;
+    }
+  }
+
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
   #score {
       position: absolute;
       right:50px;
